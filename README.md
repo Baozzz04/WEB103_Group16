@@ -76,11 +76,7 @@ Backend: NodeJS, Express, Railway
 
 [ ] Price range
 
-### Sorting
-
 [ ] User’s reviews
-
-[ ] Price
 
 ## Installation Instructions
 
