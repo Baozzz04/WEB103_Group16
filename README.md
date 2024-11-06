@@ -34,7 +34,7 @@ Backend: NodeJS, Express, Railway
 
 [ ] Approve (edit the user state) the creation of a celebrity account.
 
-[ ] Delete and flag content that violates the code of conduct
+[ ] Delete content that violates the code of conduct
 
 ### User Profile Pages (Purchased Customer)
 
@@ -63,8 +63,6 @@ Backend: NodeJS, Express, Railway
 ### Purchase request
 
 [ ] Form to fill in the form to submit an order
-
-[ ] Update or cancel the order before the celebrity accepts the request.
 
 ## Additional features
 
