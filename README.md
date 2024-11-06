@@ -30,6 +30,8 @@ Backend: NodeJS, Express, Railway
 
 ✅ User can sign in or Sign up through the webpage authentication stage. If the user forgot their password, they can request a renew password email through their email address.
 
+Link: https://www.loom.com/share/92e47b175eae400eb23d6688927a3e68?sid=106d20e3-20cc-447a-94c1-8a97892576f1
+
 ### Admin:
 
 [ ] Approve (edit the user state) the creation of a celebrity account.
@@ -78,4 +80,8 @@ Backend: NodeJS, Express, Railway
 
 ## Installation Instructions
 
-[instructions go here]
+## Running instructions:
+
+cd client
+
+npm start
