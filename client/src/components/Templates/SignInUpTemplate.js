@@ -4,6 +4,11 @@ import { TextField } from "../TextField";
 import userError from "../../utils/userError";
 import CustomizeButton from "../CustomizeButton";
 import passchecker from "../../utils/passchecker";
+import { auth } from "../../utils/firebase";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 export default function SignInUpTemplate({
   AuthType,
@@ -34,7 +39,13 @@ export default function SignInUpTemplate({
     }
 
     try {
+      await signInWithEmailAndPassword(
+        auth,
+        userCredential.email,
+        userCredential.password
+      );
       setErrorDisplayed("");
+      console.log("Dubug");
       navigate("/home");
     } catch (error) {
       setErrorDisplayed(userError(error.message));
@@ -53,6 +64,11 @@ export default function SignInUpTemplate({
     }
 
     try {
+      await createUserWithEmailAndPassword(
+        auth,
+        userCredential.email,
+        userCredential.password
+      );
       setErrorDisplayed("");
       navigate("/");
     } catch (error) {

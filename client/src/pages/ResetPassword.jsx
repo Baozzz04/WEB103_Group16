@@ -2,23 +2,26 @@ import { TextField } from "../components/TextField";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CustomizeButton from "../components/CustomizeButton";
-// import { sendResetEmail } from "../utils/api";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../utils/firebase";
+import userError from "../utils/userError";
 
 export default function ResetPassword() {
   const [userEmail, setUserEmail] = useState("");
-  // const [messageDisplayed, setMessageDisplayed] = useState({
-  //   error: "",
-  //   success: "",
-  // });
+  const [messageDisplayed, setMessageDisplayed] = useState({
+    error: "",
+    success: "",
+  });
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    // setMessageDisplayed({ error: "", success: "" });
-    // try {
-    //   setMessageDisplayed({ error: "", success: "Email Sent Successfully!" });
-    // } catch (error) {
-    //   setMessageDisplayed({ error: userError(error.message), success: "" });
-    // }
+    setMessageDisplayed({ error: "", success: "" });
+    try {
+      await sendPasswordResetEmail(auth, userEmail);
+      setMessageDisplayed({ error: "", success: "Email Sent Successfully!" });
+    } catch (error) {
+      setMessageDisplayed({ error: userError(error.message), success: "" });
+    }
   };
 
   return (
@@ -29,7 +32,8 @@ export default function ResetPassword() {
           <div className="flex flex-col gap-6">
             <div className="font-bold text-6xl">Reset Password</div>
             <div className="text-xl">
-              Please provide your email address to reset your password
+              Oops! Forgot your password? No worries—let's get you back to
+              connecting with your favorite stars.
             </div>
           </div>
 
@@ -49,7 +53,7 @@ export default function ResetPassword() {
                 </div>
               </div>
 
-              {/* {messageDisplayed.error || messageDisplayed.success ? (
+              {messageDisplayed.error || messageDisplayed.success ? (
                 <div
                   className={`w-full -mt-5 ${
                     messageDisplayed.error ? "text-red-500" : "text-green-500"
@@ -57,7 +61,7 @@ export default function ResetPassword() {
                 >
                   {messageDisplayed.error || messageDisplayed.success}
                 </div>
-              ) : null} */}
+              ) : null}
             </div>
 
             {/* Buttons */}

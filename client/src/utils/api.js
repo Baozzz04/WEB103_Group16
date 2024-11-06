@@ -73,7 +73,7 @@
 //   return new Promise((resolve) => {
 //     onAuthStateChanged(auth, (user) => {
 //       if (user) {
-//         dispatch(updateCurrentUser({ userID: user.uid, username: user.email }));
+//         updateCurrentUser({ userID: user.uid, username: user.email });
 //         resolve(true);
 //       } else {
 //         resolve(false);

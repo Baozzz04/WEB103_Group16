@@ -28,7 +28,7 @@ Backend: NodeJS, Express, Railway
 
 ### Authentication
 
-[ ] User can sign in or Sign up through the webpage authentication stage. If the user forgot their password, they can request a renew password email through their email address.
+✅ User can sign in or Sign up through the webpage authentication stage. If the user forgot their password, they can request a renew password email through their email address.
 
 ### Admin:
 

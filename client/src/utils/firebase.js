@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBQjiicOFFwK0BxbUMrzQFce1IWm6BQj6o",
-  authDomain: "expense-tracker-67ef8.firebaseapp.com",
-  projectId: "expense-tracker-67ef8",
-  storageBucket: "expense-tracker-67ef8.appspot.com",
-  messagingSenderId: "370636342786",
-  appId: "1:370636342786:web:695d245ec82891f882891b",
+  apiKey: "AIzaSyBl0dZZ0rOSyLUUZHX2PnywtMurgBpczCw",
+  authDomain: "web103-group16.firebaseapp.com",
+  projectId: "web103-group16",
+  storageBucket: "web103-group16.firebasestorage.app",
+  messagingSenderId: "504195021253",
+  appId: "1:504195021253:web:288939a66692b18cbab3ac",
 };
 
 const app = initializeApp(firebaseConfig);
