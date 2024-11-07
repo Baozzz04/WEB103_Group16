@@ -80,6 +80,12 @@ Link: https://www.loom.com/share/92e47b175eae400eb23d6688927a3e68?sid=106d20e3-2
 
 ## Installation Instructions
 
+npm install express dotenv cors
+
+npm install pg
+
+npm install nodemon --save-dev
+
 ## Running instructions:
 
 cd client
