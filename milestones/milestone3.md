@@ -29,7 +29,7 @@ Because of the midterm and assignments in this week, both of us can't really foc
 
 ### Did you finish all of your tasks in your sprint plan for this week? If you did not finish all of the planned tasks, how would you prioritize the remaining tasks on your list?
 
-We did not finish all of our tasks in our sprint plan (the one that is left is to construct the backend file and connect to Railway). This is a task that can be delayed to next week, so we will try to complete it next week along with the other plans.
+For this week, we completed all of the tasks in the milestone.
 
 ### Which features and user stories would you consider “at risk”? How will you change your plan if those items remain “at risk”?
 
