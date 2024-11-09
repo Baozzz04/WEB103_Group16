@@ -28,7 +28,9 @@ Backend: NodeJS, Express, Railway
 
 ### Authentication
 
-[ ] User can sign in or Sign up through the webpage authentication stage. If the user forgot their password, they can request a renew password email through their email address.
+✅ User can sign in or Sign up through the webpage authentication stage. If the user forgot their password, they can request a renew password email through their email address.
+
+Link: https://www.loom.com/share/92e47b175eae400eb23d6688927a3e68?sid=106d20e3-20cc-447a-94c1-8a97892576f1
 
 ### Admin:
 
@@ -78,4 +80,14 @@ Backend: NodeJS, Express, Railway
 
 ## Installation Instructions
 
-[instructions go here]
+npm install express dotenv cors
+
+npm install pg
+
+npm install nodemon --save-dev
+
+## Running instructions:
+
+cd client
+
+npm start
