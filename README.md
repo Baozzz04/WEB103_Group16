@@ -86,6 +86,8 @@ npm install pg
 
 npm install nodemon --save-dev
 
+npm install react-icons
+
 ## Running instructions:
 
 cd client
