@@ -25,7 +25,8 @@ export default function NavigationBar() {
           <img
             src="logo2.png"
             alt="LOGO"
-            className="h-16 w-16 border border-black rounded-[24px]"
+            className="h-16 w-16 border border-black rounded-[24px] cursor-pointer"
+            onClick={() => navigate("/home")}
           />
         </div>
 
@@ -36,7 +37,6 @@ export default function NavigationBar() {
           // onChange={handleSearchPhraseStateChange}
         />
 
-        {/* Functional buttons */}
         <div className="flex gap-10 items-center">
           <div className="flex gap-16">
             <button

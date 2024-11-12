@@ -1,25 +1,46 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-export default function TalentCard() {
+export default function TalentCard({
+  id,
+  profileImgUrl,
+  username,
+  role,
+  rating,
+  price,
+}) {
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    navigate(`/talent/${id}`);
+  };
+
   return (
-    <div className="w-full p-6 border border-gray-200 rounded-lg text-left">
-      {" "}
-      {/* Changed width to full */}
-      {/* Image Placeholder */}
-      <div className="w-full h-40 bg-gray-300 rounded-lg mb-4"></div>
+    <div
+      onClick={handleCardClick}
+      className="w-full p-6 border border-gray-200 rounded-lg text-left cursor-pointer"
+    >
+      {/* Profile Image */}
+      <div className="w-full h-40 bg-gray-300 rounded-lg mb-4 overflow-hidden">
+        <img
+          src={profileImgUrl}
+          alt={`${username}'s profile`}
+          className="w-full h-full object-cover"
+        />
+      </div>
       {/* Actor Name and Role */}
       <div className="mb-2">
-        <h3 className="text-xl font-semibold text-black">Actor 1</h3>
-        <p className="text-gray-500 text-base">Role</p>
+        <h3 className="text-xl font-semibold text-black">{username}</h3>
+        <p className="text-gray-500 text-base">{role}</p>
       </div>
       {/* Rating */}
       <div className="flex items-center text-gray-900 text-base mb-2">
         <FaStar className="mr-1 text-yellow-400" />
-        <span>4.99 (1022)</span>
+        <span>{rating ? rating.toFixed(2) : "No Rating"} (1022)</span>
       </div>
       {/* Price */}
-      <div className="text-xl font-bold text-black">$1</div>
+      <div className="text-xl font-bold text-black">${price}</div>
     </div>
   );
 }

@@ -17,11 +17,12 @@ const createTables = async () => {
             phone VARCHAR(20),
             description TEXT,
             profile_img_url TEXT,
-            profile_video_url TEXT,
+            profile_video_url TEXT[] DEFAULT ARRAY[]::TEXT[], -- Array of strings with default empty array
+            purchased_video_url TEXT[] DEFAULT ARRAY[]::TEXT[], -- Array of strings with default empty array
             video_price INTEGER,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             completed_orders INTEGER[],
-            avg_rating INT
+            avg_rating FLOAT
         );
 
         CREATE TABLE IF NOT EXISTS orders (
@@ -35,7 +36,8 @@ const createTables = async () => {
             video_url TEXT,
             review TEXT,
             rating INT,
-            public BOOLEAN DEFAULT FALSE
+            public BOOLEAN DEFAULT FALSE,
+            comments JSONB[] DEFAULT ARRAY[]::JSONB[] -- Array of JSON objects for comments
         );
     `;
 
@@ -54,7 +56,7 @@ const seedTables = async () => {
 
   userData.forEach((user) => {
     const insertUserQuery = {
-      text: "INSERT INTO users (email, password, username, role, phone, description, profile_img_url, profile_video_url, video_price, created_at, completed_orders, avg_rating) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)",
+      text: "INSERT INTO users (email, password, username, role, phone, description, profile_img_url, profile_video_url, purchased_video_url, video_price, created_at, completed_orders, avg_rating) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)",
       values: [
         user.email,
         user.password,
@@ -63,7 +65,8 @@ const seedTables = async () => {
         user.phone,
         user.description,
         user.profile_img_url,
-        user.profile_video_url,
+        user.profile_video_url || [], // Default to empty array if not provided
+        user.purchased_video_url || [], // Default to empty array if not provided
         user.video_price,
         user.created_at,
         user.completed_orders,
@@ -81,7 +84,7 @@ const seedTables = async () => {
 
   orderData.forEach((order) => {
     const insertOrderQuery = {
-      text: "INSERT INTO orders (created_date, completed_date, price, requested_by, filmed_by, order_status, video_url, review, rating, public) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)",
+      text: "INSERT INTO orders (created_date, completed_date, price, requested_by, filmed_by, order_status, video_url, review, rating, public, comments) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)",
       values: [
         order.created_date,
         order.completed_date,
@@ -93,6 +96,7 @@ const seedTables = async () => {
         order.review,
         order.rating,
         order.public,
+        order.comments || [], // Default to empty array if not provided
       ],
     };
     pool.query(insertOrderQuery, (err, res) => {

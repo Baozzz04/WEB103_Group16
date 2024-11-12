@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavigationBar from "../components/Home/NavigationBar";
 import TalentCard from "../components/Home/TalentCard";
+import { getAllUsers } from "../services/UsersAPI";
 
 export default function Home() {
+  const [users, setUsers] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedPrice, setSelectedPrice] = useState(null);
   const [selectedReview, setSelectedReview] = useState(null);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const data = await getAllUsers();
+        setUsers(data);
+      } catch (error) {
+        console.error("Failed to fetch users:", error);
+      }
+    };
+
+    fetchUsers();
+  }, []);
 
   const toggleCategory = (category) => {
     setSelectedCategory(selectedCategory === category ? null : category);
@@ -30,12 +45,17 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-3 gap-4">
-            <TalentCard />
-            <TalentCard />
-            <TalentCard />
-            <TalentCard />
-            <TalentCard />
-            <TalentCard />
+            {users.map((user) => (
+              <TalentCard
+                key={user.id}
+                id={user.id}
+                profileImgUrl={user.profile_img_url}
+                username={user.username}
+                role={user.description}
+                rating={user.avg_rating}
+                price={user.video_price}
+              />
+            ))}
           </div>
         </div>
 
