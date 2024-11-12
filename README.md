@@ -40,7 +40,7 @@ Link: https://www.loom.com/share/92e47b175eae400eb23d6688927a3e68?sid=106d20e3-2
 
 ### User Profile Pages (Purchased Customer)
 
-[ ] Purchased account to view purchased content
+[ ] View purchased content
 
 [ ] Add a review or comments on the page
 
@@ -72,8 +72,6 @@ Link: https://www.loom.com/share/92e47b175eae400eb23d6688927a3e68?sid=106d20e3-2
 
 [ ] Celebrity’s category
 
-[ ] Video types (Birthday, Roast, Pep talk, and etc)
-
 [ ] Price range
 
 [ ] User’s reviews
@@ -85,6 +83,8 @@ npm install express dotenv cors
 npm install pg
 
 npm install nodemon --save-dev
+
+npm install react-icons
 
 ## Running instructions:
 

@@ -6,12 +6,16 @@ import ProtectedRoutes from "./utils/protectedroutes";
 import SignUp from "./pages/SignUp";
 import ResetPassword from "./pages/ResetPassword";
 import ErrorPage from "./pages/ErrorPage";
+import DetailPage from "./pages/DetailPage";
+import OrderPage from "./pages/OrderPage";
 
 function App() {
   return (
     <Routes>
       <Route element={<ProtectedRoutes />}>
         <Route path="/home" element={<Home />} />
+        <Route path="/detail" element={<DetailPage />} />
+        <Route path="/order" element={<OrderPage />} />
       </Route>
 
       <Route path="/" element={<SignIn />} />

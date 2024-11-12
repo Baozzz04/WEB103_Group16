@@ -45,7 +45,6 @@ export default function SignInUpTemplate({
         userCredential.password
       );
       setErrorDisplayed("");
-      console.log("Dubug");
       navigate("/home");
     } catch (error) {
       setErrorDisplayed(userError(error.message));
