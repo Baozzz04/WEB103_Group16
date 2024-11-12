@@ -1,33 +1,3 @@
-export const fields = [
-  { label: "Category", type: "select", stateKey: "category" },
-  { label: "Date", type: "date", stateKey: "date" },
-  { label: "Name of Transaction", type: "text", stateKey: "name" },
-  { label: "Type of Transaction", type: "select", stateKey: "type" },
-  { label: "Amount", type: "amount", stateKey: "amount" },
-  { label: "Transaction Purpose", type: "text", stateKey: "purpose" },
-];
-
-export const categoryOptions = [
-  {
-    value: "Food & Drinks",
-    label: "Food & Drinks",
-  },
-  {
-    value: "Bills & Payments",
-    label: "Bills & Payments",
-  },
-  {
-    value: "Entertainment",
-    label: "Entertainment",
-  },
-  { value: "Others", label: "Others" },
-];
-
-export const typeOptions = [
-  { value: "Income", label: "Income" },
-  { value: "Expense", label: "Expense" },
-];
-
 export const errorMessageMissingCredentials =
   "Please provide both an email address and password.";
 export const errorMessageMissingCredentialsEmailOnly =
@@ -56,7 +26,7 @@ export const passwordRegex =
 export const primary =
   "h-12 w-full bg-[#0B0606] border border-[#0B0606] rounded-2xl text-white text-md transition-transform duration-300 ease-in-out active:scale-75";
 export const secondary =
-  "h-12 w-full bg-[#0B0606] border border-[#0B0606] rounded-2xl text-white text-md transition-transform duration-300 ease-in-out active:scale-75 flex items-center justify-center";
+  "h-12 w-full bg-gray-100 border border-gray-200 rounded-2xl text-black text-md transition-transform duration-300 ease-in-out active:scale-75 flex items-center justify-center";
 
 export const baseURL =
   "https://expense-tracker-ten-peach.vercel.app/api/transaction/";
