@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import NavigationBar from "../components/Home/NavigationBar";
 import CommentCard from "../components/Detail/CommentCard";
 import { getUserById } from "../services/UsersAPI";
@@ -8,6 +8,8 @@ import { FaStar, FaPlay } from "react-icons/fa";
 export default function DetailPage() {
   const { id } = useParams();
   const [user, setUser] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -26,10 +28,25 @@ export default function DetailPage() {
     return <p>Loading...</p>;
   }
 
+  const commentsPerPage = 2;
+  const totalSlides = Math.ceil((user.comments || []).length / commentsPerPage);
+
+  const handlePrevious = () => {
+    setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1));
+  };
+
+  const handleReserveClick = () => {
+    navigate("/order", { state: { username: user.username } }); // Pass username in state
+  };
+
   return (
     <div>
       <NavigationBar />
-      <div className="w-full max-w-3xl mx-auto p-10 bg-[#D9D9D9] rounded-3xl shadow-md mt-6">
+      <div className="w-full max-w-3xl mx-auto p-10 bg-[#D9D9D9] rounded-3xl shadow-md my-6">
         <div className="flex items-center mb-6">
           <img
             src={user.profile_img_url}
@@ -86,26 +103,54 @@ export default function DetailPage() {
               </div>
             </div>
           </div>
-          <button className="w-full bg-[#EE4B61] text-white font-semibold py-3 rounded-3xl transform transition-transform duration-200 ease-in-out active:scale-95">
+          <button
+            className="w-full bg-[#EE4B61] text-white font-semibold py-3 rounded-3xl transform transition-transform duration-200 ease-in-out active:scale-95"
+            onClick={handleReserveClick}
+          >
             Reserve a personal video for ${user.video_price}
           </button>
         </div>
 
-        {/* Recent Comments */}
+        {/* Recent Comments Slider */}
         <h3 className="text-lg font-semibold mb-4">Recent comments</h3>
-        <div className="grid grid-cols-2 gap-4">
-          {/* Sample comments */}
-          <CommentCard
-            username="Anonymous"
-            comment="Awesome. Looking forward for more videos"
-            rating={4}
-          />
-          <CommentCard
-            username="Your comment"
-            comment="Awesome. Looking forward for more videos"
-            rating={4}
-            isEditable={true}
-          />
+        <div className="relative w-full">
+          <div className="flex space-x-4">
+            {user.comments && user.comments.length > 0 ? (
+              user.comments
+                .slice(
+                  currentSlide * commentsPerPage,
+                  (currentSlide + 1) * commentsPerPage
+                )
+                .map((comment, index) => (
+                  <CommentCard
+                    key={index}
+                    username="Anonymous"
+                    comment={comment.comment}
+                    rating={comment.rating}
+                  />
+                ))
+            ) : (
+              <p>No comments available.</p>
+            )}
+          </div>
+
+          {/* Navigation Buttons */}
+          {user.comments && user.comments.length > commentsPerPage && (
+            <div className="flex justify-between mt-4">
+              <button
+                onClick={handlePrevious}
+                className="px-4 py-2 bg-gray-300 rounded-md hover:bg-gray-400"
+              >
+                Previous
+              </button>
+              <button
+                onClick={handleNext}
+                className="px-4 py-2 bg-gray-300 rounded-md hover:bg-gray-400"
+              >
+                Next
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -1,8 +1,16 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import NavigationBar from "../components/Home/NavigationBar";
 import { SelectField, TextField } from "../components/TextField";
+import { getAuth } from "firebase/auth";
 
 export default function RequestForm() {
+  const { state } = useLocation();
+  const navigate = useNavigate();
+  const username = state?.username || "Unknown User";
+  const auth = getAuth();
+  const user = auth.currentUser;
+
   const [videoType, setVideoType] = useState("");
   const [recipient, setRecipient] = useState("");
   const [requestDetail, setRequestDetail] = useState("");
@@ -37,13 +45,20 @@ export default function RequestForm() {
     }
   };
 
+  const handleCancel = () => {
+    navigate(-1);
+  };
+
+  console.log(user.email);
+
   return (
     <div>
       <NavigationBar />
 
       <div className="max-w-3xl mx-auto p-6 mt-6">
-        {" "}
         <h1 className="text-3xl font-bold mb-8">Request form</h1>
+        <p className="text-lg font-semibold mb-4">Order to: {username}</p>
+
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block text-lg font-semibold mb-2">
@@ -97,6 +112,7 @@ export default function RequestForm() {
             <button
               type="button"
               className="flex-1 py-3 bg-gray-100 text-gray-500 font-semibold rounded-lg border border-gray-200"
+              onClick={handleCancel}
             >
               Cancel
             </button>

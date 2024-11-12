@@ -37,7 +37,7 @@ export default function TalentCard({
       {/* Rating */}
       <div className="flex items-center text-gray-900 text-base mb-2">
         <FaStar className="mr-1 text-yellow-400" />
-        <span>{rating ? rating.toFixed(2) : "No Rating"} (1022)</span>
+        <span>{rating ? rating.toFixed(2) : "No Rating"}</span>
       </div>
       {/* Price */}
       <div className="text-xl font-bold text-black">${price}</div>

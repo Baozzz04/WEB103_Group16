@@ -22,6 +22,11 @@ const userData = [
     created_at: "2023-01-15",
     completed_orders: [1, 2],
     avg_rating: 4.9,
+    comments: [
+      [4.5, "Amazing performance! Really enjoyed it."],
+      [4.8, "Professional and timely."],
+      [5.0, "Fantastic video, exceeded expectations."],
+    ],
   },
   {
     email: "jane.smith@example.com",
@@ -43,6 +48,11 @@ const userData = [
     created_at: "2023-02-10",
     completed_orders: [3],
     avg_rating: 4.2,
+    comments: [
+      [4.3, "Hilarious! Kept me laughing throughout."],
+      [4.5, "Very entertaining, would love to see more."],
+      [4.1, "Good, but a bit shorter than expected."],
+    ],
   },
   {
     email: "alex.lee@example.com",
@@ -64,6 +74,11 @@ const userData = [
     created_at: "2023-03-05",
     completed_orders: [],
     avg_rating: 0,
+    comments: [
+      [4.0, "Great workout tips! Very motivational."],
+      [3.8, "Good, but could use more variety in exercises."],
+      [4.2, "Excellent trainer, very inspiring!"],
+    ],
   },
   {
     email: "sarah.connor@example.com",
@@ -85,6 +100,11 @@ const userData = [
     created_at: "2023-04-01",
     completed_orders: [4],
     avg_rating: 4.5,
+    comments: [
+      [4.5, "Very informative, learned a lot!"],
+      [4.6, "Great review, clear and concise."],
+      [4.3, "Good, but could use more examples."],
+    ],
   },
   {
     email: "michael.jordan@example.com",
@@ -108,6 +128,11 @@ const userData = [
     created_at: "2023-05-20",
     completed_orders: [5, 6],
     avg_rating: 4.8,
+    comments: [
+      [5.0, "Absolutely inspiring!"],
+      [4.7, "Motivational, loved every second."],
+      [4.9, "Powerful message, very uplifting."],
+    ],
   },
   {
     email: "emma.watson@example.com",
@@ -129,6 +154,11 @@ const userData = [
     created_at: "2023-06-12",
     completed_orders: [],
     avg_rating: 2.3,
+    comments: [
+      [3.0, "Decent video, but could be better."],
+      [2.5, "Not as engaging as I expected."],
+      [2.0, "Could improve in delivery."],
+    ],
   },
   {
     email: "steve.jobs@example.com",
@@ -153,6 +183,11 @@ const userData = [
     created_at: "2023-07-07",
     completed_orders: [7, 8],
     avg_rating: 3.5,
+    comments: [
+      [3.7, "Interesting insights on innovation."],
+      [3.5, "Could be more in-depth."],
+      [3.2, "Good, but expected more examples."],
+    ],
   },
   {
     email: "mark.zuckerberg@example.com",
@@ -174,6 +209,11 @@ const userData = [
     created_at: "2023-08-15",
     completed_orders: [9],
     avg_rating: 3.9,
+    comments: [
+      [4.0, "Great business insights!"],
+      [3.8, "Good advice, though a bit general."],
+      [4.1, "Valuable tips for entrepreneurs."],
+    ],
   },
 ];
 
