@@ -49,8 +49,6 @@ export default function RequestForm() {
     navigate(-1);
   };
 
-  console.log(user.email);
-
   return (
     <div>
       <NavigationBar />

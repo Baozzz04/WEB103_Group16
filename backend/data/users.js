@@ -27,6 +27,7 @@ const userData = [
       [4.8, "Professional and timely."],
       [5.0, "Fantastic video, exceeded expectations."],
     ],
+    actor_role: "Actors",
   },
   {
     email: "jane.smith@example.com",
@@ -53,6 +54,7 @@ const userData = [
       [4.5, "Very entertaining, would love to see more."],
       [4.1, "Good, but a bit shorter than expected."],
     ],
+    actor_role: "Comedians",
   },
   {
     email: "alex.lee@example.com",
@@ -79,6 +81,7 @@ const userData = [
       [3.8, "Good, but could use more variety in exercises."],
       [4.2, "Excellent trainer, very inspiring!"],
     ],
+    actor_role: "Athletes",
   },
   {
     email: "sarah.connor@example.com",
@@ -105,6 +108,7 @@ const userData = [
       [4.6, "Great review, clear and concise."],
       [4.3, "Good, but could use more examples."],
     ],
+    actor_role: "Creators",
   },
   {
     email: "michael.jordan@example.com",
@@ -133,6 +137,7 @@ const userData = [
       [4.7, "Motivational, loved every second."],
       [4.9, "Powerful message, very uplifting."],
     ],
+    actor_role: "Athletes",
   },
   {
     email: "emma.watson@example.com",
@@ -159,6 +164,7 @@ const userData = [
       [2.5, "Not as engaging as I expected."],
       [2.0, "Could improve in delivery."],
     ],
+    actor_role: "Actors",
   },
   {
     email: "steve.jobs@example.com",
@@ -188,6 +194,7 @@ const userData = [
       [3.5, "Could be more in-depth."],
       [3.2, "Good, but expected more examples."],
     ],
+    actor_role: "Creators",
   },
   {
     email: "mark.zuckerberg@example.com",
@@ -214,6 +221,7 @@ const userData = [
       [3.8, "Good advice, though a bit general."],
       [4.1, "Valuable tips for entrepreneurs."],
     ],
+    actor_role: "International",
   },
 ];
 

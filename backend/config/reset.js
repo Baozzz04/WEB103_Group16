@@ -23,7 +23,8 @@ const createTables = async () => {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         completed_orders INTEGER[],
         avg_rating FLOAT,
-        comments JSONB[] DEFAULT ARRAY[]::JSONB[] -- Array of JSON objects for comments
+        comments JSONB[] DEFAULT ARRAY[]::JSONB[], -- Array of JSON objects for comments
+        actor_role VARCHAR(255) -- New column for the actor role
     );
 
     CREATE TABLE IF NOT EXISTS orders (
@@ -57,7 +58,7 @@ const seedTables = async () => {
 
   userData.forEach((user) => {
     const insertUserQuery = {
-      text: "INSERT INTO users (email, password, username, role, phone, description, profile_img_url, profile_video_url, purchased_video_url, video_price, created_at, completed_orders, avg_rating, comments) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)",
+      text: "INSERT INTO users (email, password, username, role, phone, description, profile_img_url, profile_video_url, purchased_video_url, video_price, created_at, completed_orders, avg_rating, comments, actor_role) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)",
       values: [
         user.email,
         user.password,
@@ -75,6 +76,7 @@ const seedTables = async () => {
         user.comments
           ? user.comments.map(([rating, comment]) => ({ rating, comment }))
           : [], // Convert each [rating, comment] to a JSON object
+        user.actor_role || "Actor", // Default role if not provided
       ],
     };
     pool.query(insertUserQuery, (err, res) => {
@@ -102,7 +104,7 @@ const seedTables = async () => {
         order.public,
         order.comments
           ? order.comments.map(({ rating, comment }) => ({ rating, comment }))
-          : [], // Ensure comments is an array of JSON objects
+          : [],
       ],
     };
     pool.query(insertOrderQuery, (err, res) => {
@@ -115,5 +117,4 @@ const seedTables = async () => {
   });
 };
 
-// Execute the seed function
 seedTables();
