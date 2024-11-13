@@ -48,9 +48,11 @@ Link: https://www.loom.com/share/92e47b175eae400eb23d6688927a3e68?sid=106d20e3-2
 
 ### User Profile Pages (Non-Purchased Customer)
 
-[ ] View default videos that celebrities allow
+✅ View default videos that celebrities allow
 
-[ ] Read through comments that purchased users have
+✅ Read through comments that purchased users have
+
+Link: https://www.loom.com/share/d01a4a90aa46435cbb1b04a9541f449b?sid=82bc10a0-3ec0-4e10-9138-3d4f48c4b9eb
 
 ### Celebrity
 
@@ -64,17 +66,21 @@ Link: https://www.loom.com/share/92e47b175eae400eb23d6688927a3e68?sid=106d20e3-2
 
 ### Purchase request
 
-[ ] Form to fill in the form to submit an order
+✅ Form to fill in the form to submit an order
+
+Link: https://www.loom.com/share/4d6e09cb4dcd46fa805454f6d179a0d0?sid=29720082-3ac8-47af-abcd-55bc6cdce3e2
 
 ## Additional features
 
 ### Filter
 
-[ ] Celebrity’s category
+✅ Celebrity’s category
 
-[ ] Price range
+✅ Price range
 
-[ ] User’s reviews
+✅ User’s reviews
+
+Link: https://www.loom.com/share/87b0cb53792b4f689a7a8c88ea9370ad?sid=4135bd8c-0e29-4dd0-9ed4-eddb34a7a3ee
 
 ## Installation Instructions
 
