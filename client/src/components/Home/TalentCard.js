@@ -21,7 +21,6 @@ export default function TalentCard({
       onClick={handleCardClick}
       className="w-full p-6 border border-gray-200 rounded-lg text-left cursor-pointer"
     >
-      {/* Profile Image */}
       <div className="w-full h-40 bg-gray-300 rounded-lg mb-4 overflow-hidden">
         <img
           src={profileImgUrl}
@@ -29,17 +28,14 @@ export default function TalentCard({
           className="w-full h-full object-cover"
         />
       </div>
-      {/* Actor Name and Role */}
       <div className="mb-2">
         <h3 className="text-xl font-semibold text-black">{username}</h3>
         <p className="text-gray-500 text-base">{role}</p>
       </div>
-      {/* Rating */}
       <div className="flex items-center text-gray-900 text-base mb-2">
         <FaStar className="mr-1 text-yellow-400" />
         <span>{rating ? rating.toFixed(2) : "No Rating"}</span>
       </div>
-      {/* Price */}
       <div className="text-xl font-bold text-black">${price}</div>
     </div>
   );

@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import PopUpLogOutTemplate from "../Templates/PopUpLogOutTemplate";
 import { auth } from "../../utils/firebase";
-import { SearchBar } from "../Templates/SearchBar";
 import { signOut } from "firebase/auth";
 
 export default function NavigationBar() {
@@ -21,7 +20,6 @@ export default function NavigationBar() {
   return (
     <div>
       <div className="flex w-full h-[90px] bg-[#0B0606] items-center justify-between shadow-md px-12 py-10">
-        {/* Logo */}
         <div className="flex items-center gap-4">
           <img
             src="/logo2.png"
@@ -31,26 +29,7 @@ export default function NavigationBar() {
           />
         </div>
 
-        <SearchBar
-          name="search"
-          placeholder="Search..."
-          // value={searchPhrase}
-          // onChange={handleSearchPhraseStateChange}
-        />
-
         <div className="flex gap-10 items-center">
-          <div className="flex gap-16">
-            <button
-              className="text-white px-4 py-2 rounded-lg hover:bg-zinc-600 transition font-medium text-lg"
-              onClick={() => navigate("/join-as-talent")}
-            >
-              Join as Talent
-            </button>
-            <button className="hover:bg-zinc-600 rounded-lg">
-              <img src="/acc.svg" alt="ACC" className="h-8 w-8" />
-            </button>
-          </div>
-
           <div className="flex gap-10">
             <button
               className="hover:bg-zinc-600 rounded-lg"

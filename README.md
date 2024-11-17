@@ -2,7 +2,7 @@
 
 CodePath WEB103 Final Project
 
-Designed and developed by: Sheng-Kai Wen, Bao Ngoc Nguyen, Christian Michael Dela Cruz
+Designed and developed by: Sheng-Kai Wen, Bao Ngoc Nguyen
 
 🔗 Link to deployed app:
 
@@ -16,7 +16,7 @@ Our platform allows you to order personalized video messages from your favorite 
 
 ### Inspiration
 
-As the year ends, it's the perfect time to express gratitude and celebrate special moments with loved ones. Our platform allows you to order personalized video messages from your favorite celebrities, offering a unique and heartfelt way to connect with those you care about. Whether it's for a birthday, holiday, or just to make someone's day, these customized messages create lasting memories, making every occasion more meaningful and unforgettable. With an easy-to-use interface and a wide selection of celebrities, you can give a truly thoughtful gift that speaks from the heart.
+As the year ends, it's the perfect time to express gratitude and celebrate special moments with loved ones. Our platform allows you to order personalized video messages from your favorite celebrities, offering a unique and heartfelt way to connect with those you care about. Whether it's for a birthday, holiday, or just to make someone's day, these customized messages create lasting memories, making every occasion more meaningful and unforgettable. With an easy-to-use interface and a wide selection of celebrities, you can give a truly thoughtful gift that speaks from the heart.s
 
 ## Tech Stack
 
@@ -32,19 +32,17 @@ Backend: NodeJS, Express, Railway
 
 Link: https://www.loom.com/share/92e47b175eae400eb23d6688927a3e68?sid=106d20e3-20cc-447a-94c1-8a97892576f1
 
-### Admin:
-
-[ ] Approve (edit the user state) the creation of a celebrity account.
-
-[ ] Delete content that violates the code of conduct
-
 ### User Profile Pages (Purchased Customer)
 
-[ ] View purchased content
+✅ Pay for purchased content
 
-[ ] Add a review or comments on the page
+✅ View purchased content
 
-[ ] Delete/Edit the review or comments that they made
+✅ Add a review or comments on the page
+
+✅ Delete/Edit the review or comments that they made
+
+Link: https://www.loom.com/share/b844e756b56b43bbb985509bda5fb6d7?sid=54288580-b016-4f1a-9d88-71ffc915e742
 
 ### User Profile Pages (Non-Purchased Customer)
 
@@ -53,16 +51,6 @@ Link: https://www.loom.com/share/92e47b175eae400eb23d6688927a3e68?sid=106d20e3-2
 ✅ Read through comments that purchased users have
 
 Link: https://www.loom.com/share/d01a4a90aa46435cbb1b04a9541f449b?sid=82bc10a0-3ec0-4e10-9138-3d4f48c4b9eb
-
-### Celebrity
-
-[ ] Add (POST) videos onto the main page and add the title and introduction
-
-[ ] Delete (DELETE) videos that they post
-
-[ ] Edit (PUT) videos and edit the title and introduction
-
-[ ] Add/Edit the price of the account
 
 ### Purchase request
 
@@ -91,6 +79,8 @@ npm install pg
 npm install nodemon --save-dev
 
 npm install react-icons
+
+npm install @stripe/react-stripe-js @stripe/stripe-js
 
 ## Running instructions:
 

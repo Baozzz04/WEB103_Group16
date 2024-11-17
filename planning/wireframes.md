@@ -9,8 +9,6 @@ Reference the Creating an Entity Relationship Diagram final project guide in the
 3. Main Page
 4. Detail Page
 5. Purchased Video Page
-6. Celebrity Sign Up Page
-7. Celebrity Mode Page
 
 ## Wireframe 1: Login Page ⭐
 
@@ -31,11 +29,3 @@ Reference the Creating an Entity Relationship Diagram final project guide in the
 ## Wireframe 5: Purchased Video Page ⭐
 
 ![Screenshot 2024-10-26 at 12 51 02](https://github.com/user-attachments/assets/2fc4a8a9-2e6a-4b93-9fc4-6c0b13ffaeed)
-
-## Wireframe 6: Celebrity Sign Up Page ⭐
-
-![Screenshot 2024-10-26 at 12 51 31](https://github.com/user-attachments/assets/9ce07971-ee53-4efc-a00f-0fae9d5084d7)
-
-## Wireframe 7: Celebrity Mode Page ⭐
-
-![Screenshot 2024-10-26 at 12 51 48](https://github.com/user-attachments/assets/4314d2dc-1ea3-4475-9ea6-bacda79ac012)

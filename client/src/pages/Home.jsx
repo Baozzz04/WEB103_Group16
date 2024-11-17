@@ -79,7 +79,6 @@ export default function Home() {
   const toggleReview = (stars) => {
     setSelectedReview(selectedReview === stars ? null : stars);
   };
-  console.log(userAuth);
 
   return (
     <div className="flex flex-col h-screen">
@@ -87,9 +86,8 @@ export default function Home() {
       <div className="flex flex-row p-6 ml-20 space-x-8">
         <div className="flex-1">
           <div className="flex items-center mb-4">
-            <div className="w-8 h-8 rounded-full bg-gray-400 mr-2"></div>
             <div className="text-xl font-semibold">
-              Hi, {userAuth.email.split("@")[0]}
+              Hi, {userAuth.email.split("@")[0]}!
             </div>
           </div>
 

@@ -19,6 +19,7 @@ const createTables = async () => {
         profile_img_url TEXT,
         profile_video_url TEXT[] DEFAULT ARRAY[]::TEXT[], -- Array of strings with default empty array
         purchased_video_url TEXT[] DEFAULT ARRAY[]::TEXT[], -- Array of strings with default empty array
+        purchased_by_emails TEXT[] DEFAULT ARRAY[]::TEXT[], -- Array of emails for users who purchased the content
         video_price INTEGER,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         completed_orders INTEGER[],
@@ -29,16 +30,10 @@ const createTables = async () => {
 
     CREATE TABLE IF NOT EXISTS orders (
         id SERIAL PRIMARY KEY,
-        created_date DATE NOT NULL,
         completed_date DATE,
         price INTEGER NOT NULL,
         requested_by INTEGER REFERENCES users(id),
-        filmed_by INTEGER REFERENCES users(id),
-        order_status INT NOT NULL,
-        video_url TEXT,
-        review TEXT,
-        rating INT,
-        public BOOLEAN DEFAULT FALSE,
+        rating FLOAT,
         comments JSONB[] DEFAULT ARRAY[]::JSONB[] -- Array of JSON objects for comments
     );
   `;
@@ -56,9 +51,13 @@ const createTables = async () => {
 const seedTables = async () => {
   await createTables();
 
-  userData.forEach((user) => {
+  for (const user of userData) {
     const insertUserQuery = {
-      text: "INSERT INTO users (email, password, username, role, phone, description, profile_img_url, profile_video_url, purchased_video_url, video_price, created_at, completed_orders, avg_rating, comments, actor_role) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)",
+      text: `INSERT INTO users (
+          email, password, username, role, phone, description, profile_img_url, 
+          profile_video_url, purchased_video_url, purchased_by_emails, video_price, 
+          created_at, completed_orders, avg_rating, comments, actor_role
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16)`,
       values: [
         user.email,
         user.password,
@@ -69,52 +68,59 @@ const seedTables = async () => {
         user.profile_img_url,
         user.profile_video_url || [],
         user.purchased_video_url || [],
+        user.purchased_by_emails || [],
         user.video_price,
         user.created_at,
-        user.completed_orders,
+        user.completed_orders || [],
         user.avg_rating,
         user.comments
-          ? user.comments.map(([rating, comment]) => ({ rating, comment }))
-          : [], // Convert each [rating, comment] to a JSON object
-        user.actor_role || "Actor", // Default role if not provided
+          ? user.comments.map(({ email, rating, comment }) => ({
+              email,
+              rating,
+              comment,
+            }))
+          : [],
+        user.actor_role || "Actor",
       ],
     };
-    pool.query(insertUserQuery, (err, res) => {
-      if (err) {
-        console.error("⚠️ Error inserting user", err);
-        return;
-      }
-      console.log(`✅ User ${user.username} added successfully`);
-    });
-  });
 
-  orderData.forEach((order) => {
+    try {
+      await pool.query(insertUserQuery);
+      console.log(`✅ User ${user.username} added successfully`);
+    } catch (err) {
+      console.error("⚠️ Error inserting user:", err);
+    }
+  }
+
+  for (const order of orderData) {
     const insertOrderQuery = {
-      text: "INSERT INTO orders (created_date, completed_date, price, requested_by, filmed_by, order_status, video_url, review, rating, public, comments) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)",
+      text: `INSERT INTO orders (
+          completed_date, price, requested_by, rating, comments
+        ) VALUES ($1, $2, $3, $4, $5)`,
       values: [
-        order.created_date,
         order.completed_date,
         order.price,
         order.requested_by,
-        order.filmed_by,
-        order.order_status,
-        order.video_url,
-        order.review,
         order.rating,
-        order.public,
         order.comments
-          ? order.comments.map(({ rating, comment }) => ({ rating, comment }))
+          ? order.comments.map(({ email, rating, comment }) => ({
+              email,
+              rating,
+              comment,
+            }))
           : [],
       ],
     };
-    pool.query(insertOrderQuery, (err, res) => {
-      if (err) {
-        console.error("⚠️ Error inserting order", err);
-        return;
-      }
+
+    try {
+      await pool.query(insertOrderQuery);
       console.log(`✅ Order ID ${order.id} added successfully`);
-    });
-  });
+    } catch (err) {
+      console.error("⚠️ Error inserting order:", err);
+    }
+  }
 };
 
-seedTables();
+seedTables()
+  .then(() => console.log("✅ Seeding completed successfully"))
+  .catch((err) => console.error("⚠️ Seeding failed:", err));

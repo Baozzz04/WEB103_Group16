@@ -1,7 +1,14 @@
 import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
-export default function CommentCard({ username, comment, rating, isEditable }) {
+export default function CommentCard({
+  username,
+  comment,
+  rating,
+  isEditable,
+  onDelete,
+  onEdit,
+}) {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
 
@@ -21,8 +28,12 @@ export default function CommentCard({ username, comment, rating, isEditable }) {
 
       {isEditable && (
         <div className="flex space-x-4 justify-end text-sm">
-          <button className="text-blue-500 font-semibold">Edit</button>
-          <button className="text-red-500 font-semibold">Delete</button>
+          <button className="text-blue-500 font-semibold" onClick={onEdit}>
+            Edit
+          </button>
+          <button className="text-red-500 font-semibold" onClick={onDelete}>
+            Delete
+          </button>
         </div>
       )}
     </div>
