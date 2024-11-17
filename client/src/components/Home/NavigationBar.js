@@ -40,12 +40,6 @@ export default function NavigationBar() {
 
         <div className="flex gap-10 items-center">
           <div className="flex gap-16">
-            <button
-              className="text-white px-4 py-2 rounded-lg hover:bg-zinc-600 transition font-medium text-lg"
-              onClick={() => navigate("/join-as-talent")}
-            >
-              Join as Talent
-            </button>
             <button className="hover:bg-zinc-600 rounded-lg">
               <img src="/acc.svg" alt="ACC" className="h-8 w-8" />
             </button>

@@ -8,6 +8,7 @@ import ResetPassword from "./pages/ResetPassword";
 import ErrorPage from "./pages/ErrorPage";
 import DetailPage from "./pages/DetailPage";
 import OrderPage from "./pages/OrderPage";
+import PaymentPage from "./pages/PaymentPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/talent/:id" element={<DetailPage />} />{" "}
         <Route path="/order" element={<OrderPage />} />
+        <Route path="/payment" element={<PaymentPage />} />
       </Route>
 
       <Route path="/" element={<SignIn />} />

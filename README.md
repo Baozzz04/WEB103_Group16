@@ -2,7 +2,7 @@
 
 CodePath WEB103 Final Project
 
-Designed and developed by: Sheng-Kai Wen, Bao Ngoc Nguyen, Christian Michael Dela Cruz
+Designed and developed by: Sheng-Kai Wen, Bao Ngoc Nguyen
 
 🔗 Link to deployed app:
 
@@ -32,19 +32,13 @@ Backend: NodeJS, Express, Railway
 
 Link: https://www.loom.com/share/92e47b175eae400eb23d6688927a3e68?sid=106d20e3-20cc-447a-94c1-8a97892576f1
 
-### Admin:
-
-[ ] Approve (edit the user state) the creation of a celebrity account.
-
-[ ] Delete content that violates the code of conduct
-
 ### User Profile Pages (Purchased Customer)
 
-[ ] View purchased content
+✅ View purchased content
 
-[ ] Add a review or comments on the page
+✅ Add a review or comments on the page
 
-[ ] Delete/Edit the review or comments that they made
+✅ Delete/Edit the review or comments that they made
 
 ### User Profile Pages (Non-Purchased Customer)
 
@@ -91,6 +85,8 @@ npm install pg
 npm install nodemon --save-dev
 
 npm install react-icons
+
+npm install @stripe/react-stripe-js @stripe/stripe-js
 
 ## Running instructions:
 
