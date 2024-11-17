@@ -51,7 +51,6 @@ const createTables = async () => {
 const seedTables = async () => {
   await createTables();
 
-  // Insert users
   for (const user of userData) {
     const insertUserQuery = {
       text: `INSERT INTO users (
@@ -93,7 +92,6 @@ const seedTables = async () => {
     }
   }
 
-  // Insert orders
   for (const order of orderData) {
     const insertOrderQuery = {
       text: `INSERT INTO orders (

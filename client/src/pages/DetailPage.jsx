@@ -120,7 +120,6 @@ export default function DetailPage() {
       }));
 
       setShowEditModal(false);
-      // setEditData(null);
     } catch (error) {
       console.error("Failed to update comment:", error);
     }

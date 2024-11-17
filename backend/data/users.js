@@ -2,7 +2,7 @@ const userData = [
   {
     email: "john.doe@example.com",
     password: "hashed_password_1",
-    username: "JohnDoe",
+    username: "JamesBuckley",
     role: 1,
     phone: "123-456-7890",
     description: "Professional actor with 10 years of experience.",
@@ -13,7 +13,7 @@ const userData = [
       "https://cdn.cameo.com/video/653842453687a6593d363a46-processed.mp4",
     ],
     purchased_video_url: [
-      "https://cdn.cameo.com/video/6533a1fc26a5bb93c55c9669-processed.mp4",
+      "https://cdn.cameo.com/video/6534cb489737222362cff4b6-processed.mp4",
     ],
     video_price: 50,
     created_at: "2023-01-15",
@@ -42,16 +42,22 @@ const userData = [
   {
     email: "jane.smith@example.com",
     password: "hashed_password_2",
-    username: "JaneSmith",
+    username: "AdamnKilla",
     role: 1,
     phone: "234-567-8901",
     description: "Award-winning comedian known for stand-up performances.",
     profile_img_url:
-      "https://a1cf74336522e87f135f-2f21ace9a6cf0052456644b80fa06d4f.ssl.cf2.rackcdn.com/images/characters/large/800/Jane-Smith.Mr-and-Mrs-Smith.webp",
+      "https://www.cameo.com/cdn-cgi/image/fit=cover,format=auto,width=84,height=84/https://cdn.cameo.com/resizer/EtCJMcYQn_avatar-1730477840797.jpg",
     profile_video_url: [
-      "https://cdn.cameo.com/video/6731cdccae6e788c2269b356-processed.mp4",
+      "https://cdn.cameo.com/video/673a5b675ca0f1b061a390d2-processed.mp4",
+      "https://cdn.cameo.com/video/673a530bfccec25de7f65e7a-processed.mp4",
+      "https://cdn.cameo.com/video/673a1bcdfccec25de7f3b3f1-processed.mp4",
+      "https://cdn.cameo.com/video/673a12ab59e5d216047b9dfe-processed.mp4",
     ],
-    purchased_video_url: ["https://example.com/videos/comedy_customer1.mp4"],
+    purchased_video_url: [
+      "https://cdn.cameo.com/video/6739cef1f8d7b4049f6ebc03-processed.mp4",
+      "https://cdn.cameo.com/video/6739bee3c7b367c963d5c8a5-processed.mp4",
+    ],
     video_price: 40,
     created_at: "2023-02-10",
     completed_orders: [3],
@@ -79,14 +85,20 @@ const userData = [
   {
     email: "alex.lee@example.com",
     password: "hashed_password_3",
-    username: "AlexLee",
+    username: "JordanLawley",
     role: 1,
     phone: "345-678-9012",
     description: "Fitness trainer creating motivational workout videos.",
     profile_img_url:
-      "https://upload.wikimedia.org/wikipedia/commons/2/27/Alex_Lee_official_photo.jpg",
-    profile_video_url: ["https://cdn.cameo.com/v/wm-WcrIQqauYR.mp4"],
-    purchased_video_url: [],
+      "https://www.cameo.com/cdn-cgi/image/fit=cover,format=auto,width=84,height=84/https://cdn.cameo.com/resizer/public/nBB9uLI20.jpg",
+    profile_video_url: [
+      "https://cdn.cameo.com/video/61651386599a61001ddc9fba-processed.mp4",
+      "https://cdn.cameo.com/video/64a671fd585b08e4fd4985b5-processed.mp4",
+      "https://cdn.cameo.com/video/61fd2cea6d0891f561d747bc-processed.mp4",
+    ],
+    purchased_video_url: [
+      "https://cdn.cameo.com/video/video-60a6b39a4bca2a001dfc8503-qPUGDf245-SHNR8UpJ2-no-wm.mp4",
+    ],
     video_price: 30,
     created_at: "2023-03-05",
     completed_orders: [],
@@ -151,15 +163,21 @@ const userData = [
   {
     email: "michael.jordan@example.com",
     password: "hashed_password_5",
-    username: "MichaelJordan",
+    username: "BobanMarjanovic",
     role: 1,
     phone: "567-890-1234",
     description: "Former basketball player offering inspirational talks.",
     profile_img_url:
-      "https://cdn.nba.com/manage/2021/08/michael-jordan-looks.jpg",
-    profile_video_url: ["https://cdn.cameo.com/v/wm-WcrIQqauYR.mp4"],
+      "https://www.cameo.com/cdn-cgi/image/fit=cover,format=auto,width=84,height=84/https://cdn.cameo.com/resizer/2srS1jT5-5C3B46AC-9641-45C4-993D-5A562C6B4BB8.jpg",
+    profile_video_url: [
+      "https://cdn.cameo.com/v/wm-L2tiDaulME.mp4",
+      "https://cdn.cameo.com/video/665f40f2fd651f2904f95fae-processed.mp4",
+      "https://cdn.cameo.com/video/65fa71344ff4fe891c33df6b-processed.mp4",
+    ],
     purchased_video_url: [
-      "https://example.com/videos/inspiration_customer1.mp4",
+      "https://cdn.cameo.com/video/652d7a09b0816e43b98a8b34-processed.mp4",
+      "https://cdn.cameo.com/video/650f987b26512432ad025ed6-processed.mp4",
+      "https://cdn.cameo.com/video/64613064d509e7831f50c317-processed.mp4",
     ],
     video_price: 100,
     created_at: "2023-05-20",
@@ -188,16 +206,22 @@ const userData = [
   {
     email: "emma.watson@example.com",
     password: "hashed_password_6",
-    username: "EmmaWatson",
+    username: "Paul",
     role: 1,
     phone: "678-901-2345",
     description: "Film actress known for iconic roles.",
     profile_img_url:
-      "https://www.cameo.com/cdn-cgi/image/fit=cover,format=auto,width=84,height=84/https://cdn.cameo.com/resizer/EtCJMcYQn_avatar-1730477840797.jpg",
+      "https://www.cameo.com/cdn-cgi/image/fit=cover,format=auto,width=84,height=84/https://cdn.cameo.com/resizer/fKc7x46Dx_avatar-1713349693901.jpg",
     profile_video_url: [
-      "https://cdn.cameo.com/video/6731cdccae6e788c2269b356-processed.mp4",
+      "https://cdn.cameo.com/video/6739f319117721796aeb9342-processed.mp4",
+      "https://cdn.cameo.com/video/6739a0f5662b3e5420d240e5-processed.mp4",
+      "https://cdn.cameo.com/video/67392aa889b822f5f85046c9-processed.mp4",
+      "https://cdn.cameo.com/video/6739218bc7b367c963cfe4e9-processed.mp4",
     ],
-    purchased_video_url: [],
+    purchased_video_url: [
+      "https://cdn.cameo.com/video/6737c598c92435d8eec4ab87-processed.mp4",
+      "https://cdn.cameo.com/video/67372c3da041a1ca0ef27840-processed.mp4",
+    ],
     video_price: 75,
     created_at: "2023-06-12",
     completed_orders: [],
@@ -225,15 +249,21 @@ const userData = [
   {
     email: "steve.jobs@example.com",
     password: "hashed_password_7",
-    username: "SteveJobs",
+    username: "NigelFarage",
     role: 1,
     phone: "789-012-3456",
     description: "Tech visionary sharing innovation strategies.",
     profile_img_url:
-      "https://hips.hearstapps.com/hmg-prod/images/apple-ceo-steve-jobs-speaks-during-an-apple-special-event-news-photo-1683661736.jpg",
-    profile_video_url: ["https://cdn.cameo.com/v/wm-WcrIQqauYR.mp4"],
+      "https://www.cameo.com/cdn-cgi/image/fit=cover,format=auto,width=84,height=84/https://cdn.cameo.com/resizer/TxPxcfzwn_avatar-C86StPZ5K.jpg",
+    profile_video_url: [
+      "https://cdn.cameo.com/video/intro-video-603f87ab772d55001d2ac2a5-TpKLaNU-o-0JV9-Ylms-wm.mp4",
+      "https://cdn.cameo.com/video/6737446d470960471bd2f16e-processed.mp4",
+      "https://cdn.cameo.com/video/67353e11476b2e1d15a7b5a6-processed.mp4",
+      "https://cdn.cameo.com/video/6735215d07f6fb0879a24abe-processed.mp4",
+    ],
     purchased_video_url: [
-      "https://example.com/videos/innovation_customer1.mp4",
+      "https://cdn.cameo.com/video/672fb5bd2809c32ea03381ea-processed.mp4",
+      "https://cdn.cameo.com/video/672c95f0b7516726d34b1b86-processed.mp4",
     ],
     video_price: 90,
     created_at: "2023-07-07",

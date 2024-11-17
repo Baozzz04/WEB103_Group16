@@ -52,7 +52,6 @@ export const updateUserFields = async (req, res) => {
   const { purchased_by_emails, comments, avg_rating } = req.body;
 
   try {
-    // Retrieve the existing user
     const userResult = await pool.query("SELECT * FROM users WHERE id = $1", [
       id,
     ]);
@@ -63,7 +62,6 @@ export const updateUserFields = async (req, res) => {
 
     const user = userResult.rows[0];
 
-    // Handle purchased_by_emails as a PostgreSQL array
     const currentPurchasedByEmails = user.purchased_by_emails || [];
     const newPurchasedByEmails = purchased_by_emails
       ? Array.isArray(purchased_by_emails)
@@ -74,7 +72,6 @@ export const updateUserFields = async (req, res) => {
       ...new Set([...currentPurchasedByEmails, ...newPurchasedByEmails]),
     ];
 
-    // Handle comments
     const currentComments = user.comments || [];
     const newComments = comments
       ? comments.map(({ email, rating, comment }) => ({
@@ -85,7 +82,6 @@ export const updateUserFields = async (req, res) => {
       : [];
     const updatedComments = [...currentComments, ...newComments];
 
-    // Prevent duplicate comments based on `email` and `comment`
     const deduplicatedComments = updatedComments.reduce((acc, newComment) => {
       if (
         !acc.some(
@@ -98,7 +94,6 @@ export const updateUserFields = async (req, res) => {
       return acc;
     }, []);
 
-    // Calculate updated avg_rating
     const totalRatings = deduplicatedComments.reduce(
       (sum, c) => sum + c.rating,
       0
@@ -108,7 +103,6 @@ export const updateUserFields = async (req, res) => {
         ? totalRatings / deduplicatedComments.length
         : 0;
 
-    // Update the database
     const query = `
       UPDATE users
       SET purchased_by_emails = $1, comments = $2, avg_rating = $3
@@ -130,11 +124,10 @@ export const updateUserFields = async (req, res) => {
 };
 
 export const deleteComment = async (req, res) => {
-  const { id } = req.params; // User ID
-  const { email, comment } = req.body; // Email and comment to identify which comment to delete
+  const { id } = req.params;
+  const { email, comment } = req.body;
 
   try {
-    // Retrieve the existing user
     const userResult = await pool.query("SELECT * FROM users WHERE id = $1", [
       id,
     ]);
@@ -145,18 +138,15 @@ export const deleteComment = async (req, res) => {
 
     const user = userResult.rows[0];
 
-    // Check if comments exist
     const currentComments = user.comments || [];
     const updatedComments = currentComments.filter(
       (c) => c.email !== email || c.comment !== comment
     );
 
-    // Calculate updated avg_rating
     const totalRatings = updatedComments.reduce((sum, c) => sum + c.rating, 0);
     const updatedAvgRating =
       updatedComments.length > 0 ? totalRatings / updatedComments.length : 0;
 
-    // Update the database
     const query = `
       UPDATE users
       SET comments = $1, avg_rating = $2
@@ -181,7 +171,7 @@ export const deleteComment = async (req, res) => {
 
 export const updateComment = async (req, res) => {
   const { id } = req.params;
-  const { email, oldComment, newComment, newRating } = req.body; // Email, old comment text, new comment text, and new rating
+  const { email, oldComment, newComment, newRating } = req.body;
 
   try {
     const userResult = await pool.query("SELECT * FROM users WHERE id = $1", [
