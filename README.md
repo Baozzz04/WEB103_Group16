@@ -4,7 +4,7 @@ CodePath WEB103 Final Project
 
 Designed and developed by: Sheng-Kai Wen, Bao Ngoc Nguyen
 
-🔗 Link to deployed app:
+🔗 Link to deployed app: https://web-103-group16-pizt.vercel.app/
 
 ## About
 
