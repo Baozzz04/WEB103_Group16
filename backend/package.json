@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"nodemon server\" \"node config/reset.js\"",
+    "build": "concurrently \"nodemon server\" \"node config/reset.js\"",
     "start": "cd backend && node server",
-    "build": "cd client && vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
