@@ -1,5 +1,5 @@
-const API_URL = "http://localhost:3001/api/users";
-const ORDERS_API_URL = "http://localhost:3001/api/orders";
+const API_URL = "https://web-103-group16-dudh.vercel.app/api/users";
+const ORDERS_API_URL = "https://web-103-group16-dudh.vercel.app/api/orders";
 
 export const getAllUsers = async () => {
   try {
